@@ -1,4 +1,3 @@
-
 # Snitch Clone Django
 
 **Snitch Clone Django** is an e-commerce web application based on the Django framework. This project provides a robust backend with an admin panel for managing products, users, orders, and more.
@@ -19,7 +18,7 @@ To get started with the Snitch Clone Django project, follow these steps:
 
     ```bash
     python -m venv env
-    .\env\Scripts\activate # On Mac use `source env/bin/activate` 
+    .\env\Scripts\activate  # On Mac use `source env/bin/activate` 
     ```
 
 3. **Install the required dependencies:**
