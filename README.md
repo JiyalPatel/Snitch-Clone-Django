@@ -19,7 +19,7 @@ To get started with the Snitch Clone Django project, follow these steps:
 
     ```bash
     python -m venv env
-    ./env\Scripts\activate On Mac use `source env/bin/activate` 
+    .\env\Scripts\activate # On Mac use `source env/bin/activate` 
     ```
 
 3. **Install the required dependencies:**
