@@ -1,0 +1,93 @@
+{% extends 'base.html' %}
+
+{% block main %}
+
+    <main>
+        <section>
+            <div>
+                <img class="w-full" src="/static/assets/slide2.webp" alt="" />
+            </div>
+        </section>
+
+        <section id="shop">
+
+            <section id="trending">
+
+                <h1 class="w-full bg-gray-100 text-center py-8 text-4xl capitalize border-t-2 font-bold tracking-widest">Trending Now 🔥</h1>
+                <!-- cardContainer -->
+                <div class=" py-6 px-20 grid grid-cols-5 gap-5">
+                    {% for item in trending %}
+                <!-- card -->
+                <a href="/product/{{item.id}}">
+
+                    <div class="max-w-sm rounded-md overflow-hidden">
+                        <!-- img -->
+                        <div class="w-full h-96 overflow-hidden">
+                            <img class="w-full h-full object-cover hover:scale-110 transition-transform duration-500"
+                                src={{item.cover}} alt="">
+                        </div>
+
+                        <!-- details -->
+                        <div class="bg-gray-100 w-full h-full p-2 py-4 flex flex-col gap-2">
+                            <p class="font-semibold flex items-center">{{item.name}}</p>
+                            <div class="pt-2">
+                                <span>Rs.{{item.price}}</span> <strike>Rs. 2000</strike>
+                            </div>
+                            <div>
+                                <p class="font-semibold hover:underline hover:font-bold">Buy Now ></p>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+
+                {% empty %}
+
+                    <h1>Nothing Found Here</h1>
+
+                {% endfor %}
+                </div>
+
+            </section>
+
+            <section>
+            
+            <h1 class="w-full bg-gray-100 text-center py-5 text-3xl capitalize font-semibold">Other Products</h1>
+            <!-- cardContainer -->
+            <div class=" py-6 px-20 grid grid-cols-5 gap-5">
+
+                 {% for item in products %}
+                <!-- card -->
+                <a href="/product/{{item.id}}">
+
+                    <div class="max-w-sm rounded-md overflow-hidden">
+                        <!-- img -->
+                        <div class="w-full h-96 overflow-hidden">
+                            <img class="w-full h-full object-cover hover:scale-110 transition-transform duration-500"
+                                src={{item.cover}} alt="">
+                        </div>
+
+                        <!-- details -->
+                        <div class="bg-gray-100 w-full h-full p-2 py-4 flex flex-col gap-2">
+                            <p class="font-semibold flex items-center">{{item.name}}</p>
+                            <div class="pt-2">
+                                <span>Rs.{{item.price}}</span> <strike>Rs. 2000</strike>
+                            </div>
+                            <div>
+                                <p class="font-semibold hover:underline hover:font-bold">Buy Now ></p>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+
+                {% empty %}
+                    <h1>Nothing Found Here</h1>
+
+                {% endfor %}
+
+            </div>
+
+        </section>
+        </section>
+    </main>
+
+{% endblock %}

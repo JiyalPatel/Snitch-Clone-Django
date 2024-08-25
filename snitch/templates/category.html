@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+
+{% block main %}
+    <main class="py-5 px-32">
+        <h1 class="text-5xl capitalize bg-gray-100 text-center py-4 rounded-md font-semibold">{{cat}}</h1>
+        <section class="pt-10">
+            <div class="grid grid-cols-5 gap-5">
+
+                {% for item in data %}
+                <!-- card -->
+                <a href="/product/{{item.id}}">
+
+                    <div class="max-w-sm rounded-md overflow-hidden">
+                        <!-- img -->
+                        <div class="w-full h-96 overflow-hidden">
+                            <img class="w-full h-full object-cover hover:scale-110 transition-transform duration-500"
+                                src={{item.cover}} alt="">
+                        </div>
+
+                        <!-- details -->
+                        <div class="bg-gray-100 w-full h-full p-2 py-4 flex flex-col gap-2">
+                            <p class="font-semibold flex items-center">{{item.name}}</p>
+                            <div class="pt-2">
+                                <span>Rs.{{item.price}}</span> <strike>Rs. 2000</strike>
+                            </div>
+                            <div>
+                                <p class="font-semibold hover:underline hover:font-bold">Buy Now ></p>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+
+                {% empty %}
+                    <h1>Nothing Found Here</h1>
+
+                {% endfor %}
+
+            </div>
+        </section>
+    </main>
+
+
+{% endblock %}
