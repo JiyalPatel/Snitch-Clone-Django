@@ -11,7 +11,7 @@ To get started with the Snitch Clone Django project, follow these steps:
 1. **Clone the repository:**
 
     ```bash
-    git clone <repository-url>
+    git clone https://github.com/JiyalPatel/Snitch-Clone-Django.git
     cd snitch-clone-django
     ```
 
